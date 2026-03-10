@@ -1,4 +1,4 @@
-#TypeScript State Machine
+# TypeScript State Machine
 
 A strongly typed finite state machine (FSM) implemented in TypeScript using generics and type inference.
 
@@ -16,7 +16,7 @@ The design uses advanced TypeScript techniques such as:
 
 
 
-##Overview
+## Overview
 
 The system models a finite state machine where each state defines how it handles incoming messages.
 
