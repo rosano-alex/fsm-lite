@@ -1,40 +1,44 @@
 {
-	"name": "use-chromecast-caf-receiver",
-	"version": "0.0.3",
-	"description": "FSM LITE",
-	"main": "src/fsm-lite.ts",
-	"scripts": {
-		"start": "rollup --configPlugin typescript -c -w",
-		"dev": "npm start",
-		"build": "rollup --configPlugin typescript -c",
-		"prepare": "npm run build"
-	},
-
-
-	"author": {
-		"name": "ALEX ROSANO",
-		"email": "alexrosano@gmaiol.com",
-		
-	},
-	"license": "ISC",
-	"peerDependencies": {
-		"react": "17 || 18"
-	},
-	"files": [
-		"/dist/"
-	],
-	"devDependencies": {
-		"@rollup/plugin-commonjs": "^24.0.0",
-		"@rollup/plugin-node-resolve": "^15.0.1",
-		"@rollup/plugin-typescript": "^11.0.0",
-		"@types/react": "^18.0.26",
-		"react": "^18.2.0",
-		"rollup": "^3.9.1",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-typescript2": "^0.34.1",
-		"typescript": "^4.9.4"
-	},
-	"dependencies": {
-		"@types/chromecast-caf-receiver": "^6.0.8"
-	}
+  "name": "typed-fsm",
+  "version": "1.0.0",
+  "description": "A strongly typed finite state machine for TypeScript with actor style messaging.",
+  "keywords": [
+    "typescript",
+    "fsm",
+    "state-machine",
+    "actor-model",
+    "typed",
+    "architecture"
+  ],
+  "author": "ALEX ROSANO",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/dist/"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "prettier": "^3.8.1"
+  }
 }
