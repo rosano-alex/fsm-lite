@@ -1,10 +1,8 @@
-# createFSM
+![Finite State Machine](misc/label.png)
 
-A minimal, type-safe finite state machine (FSM) library for TypeScript.
+A minimal, type-safe finite state machine (FSM) library for TypeScript.  States are first-class values. Transitions are compile-time checked. The machine (FSM) communicates via a message-passing interface, keeping callers and handlers fully decoupled.
 
-States are first-class values. Transitions are compile-time checked. The machine (FSM) communicates via a message-passing interface, keeping callers and handlers fully decoupled.
-
----
+<b>Example implementations can be found in the example folders.<b>
 
 ## Installation
 
@@ -13,8 +11,6 @@ Copy `fsm.ts` into your project, or import from wherever you're hosting it:
 ```ts
 import { createFSM } from './fsm';
 ```
-
----
 
 ## Core Concepts
 
@@ -81,7 +77,7 @@ machine.send({
 });
 ```
 
----
+
 
 ## API Reference
 
@@ -111,9 +107,9 @@ type Descriptor<States, TPayload, TReply> = {
 
 | Property       | Required | Description                                    |
 | -------------- | -------- | ---------------------------------------------- |
-| `initialState` | ✅       | The state the machine starts in                |
-| `states`       | ✅       | A handler for every state in the union         |
-| `onChange`     | ❌       | Called after every successful state transition |
+| `initialState` | yes     | The state the machine starts in                |
+| `states`       | yes      | A handler for every state in the union         |
+| `onChange`     | no      | Called after every successful state transition |
 
 ---
 
@@ -180,10 +176,10 @@ The `States` generic is inferred from the keys of `states`. This means:
 - Exhaustiveness is enforced: every state in the union must have an entry in `states`
 
 ```ts
-// ✅ Valid
+//  Valid
 instance.setState('loading');
 
-// ❌ Compile error: Argument of type '"fetching"' is not assignable...
+//  Compile error: Argument of type '"fetching"' is not assignable...
 instance.setState('fetching');
 ```
 
