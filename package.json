@@ -23,11 +23,12 @@
     "test:watch": "vitest",
     "build": "tsc",
     "clean": "rm -rf dist",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "demo:ts": "npx tsx examples/turnstile/app.ts"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
+    "tsx": "^4.21.0",
+    "prettier": "^3.8.1",
     "vitest": "^4.1.0"
   },
   "jest": {
@@ -39,6 +40,6 @@
     "node": ">=18"
   },
   "dependencies": {
-    "prettier": "^3.8.1"
+    "typescript": "^5.9.3"
   }
 }
